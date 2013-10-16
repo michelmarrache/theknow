@@ -1,0 +1,56 @@
+extends layout
+
+block content
+
+	.row
+		.col-sm-12
+			.page-header
+				h1= metaTitle
+
+	.row
+		.col-sm-12
+			form#formAddUser(name="adduser", method="post", action="/adduser", role="form")
+				.row
+					.col-sm-12
+						h2 Account Information
+				.row
+					.col-sm-6
+						.form-group
+							input#inputUserName(type="text", placeholder="Username", name="username", class="form-control")
+				//
+					.row
+						.col-sm-6
+							.form-group
+								input#inputPassword(type="password", placeholder="Password", name="password", class="form-control")
+						.col-sm-6
+							.form-group
+								input#inputConfirmPassword(type="password", placeholder="Confirm Password", name="confirmpassword", class="form-control")
+				
+					.row
+						.col-sm-12
+							h2 Personal Information
+				.row
+					.col-sm-6
+						.form-group
+							input#inputFirstName(type="text", placeholder="First Name", name="firstname", class="form-control")
+					.col-sm-6
+						.form-group
+							input#inputLastName(type="text", placeholder="Last Name", name="lastname", class="form-control")
+				.row
+					.col-sm-6
+						.form-group
+							input#inputUserEmail(type="email", placeholder="Email", name="useremail", class="form-control")
+					.col-sm-6
+						.form-group
+							input#inputPosition(type="text", placeholder="Position/Title", name="position", class="form-control")
+				.row
+					.col-sm-6
+						.form-group
+							input#inputExtension(type="tel", placeholder="Extension", name="extension", class="form-control")
+
+				.row
+					.col-sm-12
+						.text-center
+							a#btnCancel(href="/directory", class="btn btn-danger") cancel
+							button#btnReset(type="reset", class="btn") reset
+							button#btnSubmit(type="submit", class="btn btn-info") submit

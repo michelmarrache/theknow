@@ -1,0 +1,79 @@
+extends layout
+
+block content
+	//
+		.jumbotron
+			.container
+			h1 Welcome to <em>The KNOW!</em>
+			p This is the new kabookaboo Knowledge Base, or <strong>The KNOW</strong>! Familiarize yourself with the sections and functionalities because you will be using it as one of your main tools while working at kabookaboo.
+			br
+			p.text-center
+				a.btn.btn-success.btn-lg.welcome-message-btn OK
+
+	.row
+		.col-sm-12
+			.page-header
+				h1 Hello, #{user.email}
+
+	.container
+		.row
+			// LEFT COLUMN
+			.col-sm-6
+				// USER DEPARTMENT ACTIVITY
+				.panel.panel-default.panel-danger
+					.panel-heading
+						h3.panel-title
+							span.icon-bullhorn &nbsp; 
+							| Department Activity
+					.panel-body
+						p Coming Soon.
+						.panel-add-btn
+							a(href="#").btn.btn-danger.btn-xs
+								span.icon-plus Add
+
+				// CLIENT/PROJECT ACTIVITY
+				.panel.panel-default.panel-warning
+					.panel-heading
+						h3.panel-title
+							span.icon-bullhorn &nbsp; 
+							| Department Activity
+					.panel-body
+						p Coming Soon.
+						.panel-add-btn
+							a(href="#").btn.btn-warning.btn-xs
+								span.icon-plus Add
+
+			// RIGHT COLUMN
+			.col-sm-6
+				// OPERATIONS ACTIVITY
+				.panel.panel-default.panel-info
+					.panel-heading
+						h3.panel-title
+							span.icon-gears &nbsp; 
+							| Operations Activity
+					.panel-body
+						p Coming Soon.
+						.panel-add-btn
+							a(href="#").btn.btn-info.btn-xs
+								span.icon-plus Add
+
+				// PUBLIC ACTIVITY
+				.panel.panel-default.panel-success
+					.panel-heading
+						h3.panel-title
+							span.icon-comments &nbsp; 
+							| Public Activity
+					.panel-body
+						p Coming Soon.
+						.panel-add-btn
+							a(href="#").btn.btn-success.btn-xs
+								span.icon-plus Add
+
+	script.
+		$(function(){
+			$('.welcome-message-btn').on("click", function(){
+				var $jumbotron = $(this).parents('.jumbotron');
+				$jumbotron.slideUp(1600, 'easeOutBounce');
+				//$jumbotron.after('<div class="row">&nbsp;</div>');
+			})
+		})

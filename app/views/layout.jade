@@ -1,0 +1,92 @@
+doctype 5
+html
+  head
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="apple-touch-fullscreen", content="yes")
+    link(rel="shortcut icon", href="/favicon.ico")
+
+    title The KNOW | kabookaboo Knowledge Base
+    meta(name="description", content="")
+    meta(name="keywords", content="")
+
+    link(rel='stylesheet', href='/css/reset.css')
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/bootstrap/css/font-awesome.min.css')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,800,700')
+    link(rel='stylesheet', href='/css/default.css')
+    link(rel='stylesheet', href='/css/responsive.css')
+
+    script(src='/js/libs/custom.modernizr.js')
+    script(src='/js/libs/jquery-1.8.1.min.js')
+    script(src='/js/libs/easing.js')
+
+    //if IE
+      link(rel='stylesheet', href='/css/ie.css')
+      script(src='/js/respond.min.js')
+      
+    script.
+      $(function(){
+        if ("ontouchstart" in document.documentElement){
+          $('meta[name=viewport]').remove();
+          if (window.screen.width <= 720 || window.screen.height <= 720) {
+            $('head').append( '<meta name="viewport" content="width=540, initial-scale=1.0">' );
+          }
+        };
+      });
+  body
+    header.navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-collapse")
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a(href="/").navbar-brand
+            img(src="/images/logo-white.png" alt="kabookaboo logo")
+        .navbar-collapse.collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href="/profile")
+                span.icon-user.icon-white
+                | #{user.firstName}
+            li
+              a(href="/logout")
+                span.icon-signout.icon-white
+                | Logout
+
+    .container
+      .row
+        .col-sm-3
+          nav.sidebar-nav
+            strong
+              // span.icon-align-justify
+              | Main Menu
+            .well
+              ul.nav
+                li
+                  a(href="/")
+                    span.icon-bar-chart
+                    | Dashboard
+                li
+                  a(href="/directory")
+                    span.icon-book
+                    | Phone Directory
+
+        .col-sm-9
+          block content
+
+      .row
+        .col-sm-9.col-sm-offset-3
+          hr
+          footer.text-center
+            p
+              &copy;
+              script.
+                document.write((new Date).getFullYear())
+              | kabookaboo Marketing
+
+    script(src='/bootstrap/js/bootstrap.min.js')
+    script(src='/js/script.js')
+    script(src='/js/google.analytics.js')

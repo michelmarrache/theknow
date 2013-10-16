@@ -1,0 +1,113 @@
+
+html,
+body{
+	overflow-x: hidden;
+	overflow-y: auto;
+	min-width: 320px;
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	color: #666666;
+	padding-top: 82px;
+}
+
+h1{
+	font-size: 2.8em;
+}
+h2{
+	font-size: 2.2em;
+}
+h3{
+	font-size: 1.9em;
+}
+
+
+
+/* HEADER
+---------------------------------------------*/
+.navbar > .container .navbar-brand{
+	margin-left: 0;
+}
+.nav.navbar-nav.navbar-right a *[class^='icon-']{
+	margin-right: 6px;
+}
+
+
+/* MAIN NAV
+---------------------------------------------*/
+.sidebar-nav{
+	padding: 0;
+	margin: 20px 0 0;
+}
+.sidebar-nav > strong{
+	display: block;
+	font-size: 1.2em;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 15px 15px 5px;
+}
+.sidebar-nav .well ul.nav{
+	margin: -18px;
+}
+
+.sidebar-nav a{
+	color: #00A89E;
+}
+.sidebar-nav a:hover{
+	color: #A54212;
+}
+
+.sidebar-nav *[class^='icon-']{
+	font-size: 14px;
+	margin-right: 6px;
+}
+.sidebar-nav a *[class^='icon-']{
+	color: #008C78;
+}
+
+
+
+/* CONTENT
+---------------------------------------------*/
+.page-header{
+	margin: 20px 0;
+}
+h1 em{
+	display: inline-block;
+}
+.user-table-actions .btn{
+	font-size: 12px;
+	padding: 0 4px;
+}
+
+
+/* FORMS
+---------------------------------------------*/
+.btn + .btn{
+	margin-left: 10px;
+}
+
+
+
+/* TABLES
+---------------------------------------------*/
+.table-responsive{
+	margin: -20px auto 10px;
+}
+.dataTables_scrollBody{
+	border-bottom: 1px solid #DDDDDD;
+}
+.dataTables_scrollBody > table.table{
+	margin-top: 0 !important;
+}
+
+
+
+/* FOOTER
+---------------------------------------------*/
+footer{
+	font-size: .8em;
+	color: #CCCCCC;
+}

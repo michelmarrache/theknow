@@ -1,0 +1,71 @@
+extends layout
+
+block content
+
+	.row
+		.col-sm-12
+			.page-header
+				h1 Account Information
+				h2 #{user.email}
+
+	.row
+		.col-sm-12
+			form#formAddUser(name="adduser", method="post", action="/updateuser", role="form")
+				input(type="hidden", value="#{user.email}", name="email")
+
+				//
+					.row
+						.col-sm-6
+							.form-group
+								input#inputPassword(type="password", value="#{user.password}", placeholder="Password", name="password", class="form-control")
+						.col-sm-6
+							.form-group
+								input#inputConfirmPassword(type="password", placeholder="Confirm Password", name="confirmpassword", class="form-control")
+					
+					.row
+						.col-sm-12
+							h2 Personal Information
+
+				.row
+					.col-sm-6
+						.form-group
+							label.label-control First Name
+							input#inputFirstName(type="text", value="#{user.firstName}", placeholder="First Name", name="firstname", class="form-control")
+					.col-sm-6
+						.form-group
+							label.label-control Last Name
+							input#inputLastName(type="text", value="#{user.lastName}", placeholder="Last Name", name="lastname", class="form-control")
+				.row
+					.col-sm-6
+						.form-group
+							label.label-control Position
+							input#inputPosition(type="text", value="#{user.position}", placeholder="Position/Title", name="position", class="form-control")
+					.col-sm-6
+						.form-group
+							label.label-control Extension
+							input#inputExtension(type="tel", value="#{user.extension}", placeholder="Extension", name="extension", class="form-control")
+				.row
+					.col-sm-6
+						.form-group
+							label.label-control Department
+							input#inputPosition(type="text", value="#{user.department}", placeholder="Department", name="department", class="form-control")
+
+				.row
+					.col-sm-12
+						.text-center
+							a#btnCancel(href="/directory", class="btn btn-danger") cancel
+							button#btnReset(type="reset", class="btn") reset
+							button#btnSubmit(type="submit", class="btn btn-info") submit
+
+	script.
+		function resetFields(){
+			$('input.form-control').each(function(){
+				if($(this).val() == 'undefined') $(this).val('')
+			});
+		};
+		$(function(){
+			resetFields();
+			$('#btnReset').on("click", function(){
+				resetFields();
+			})
+		});

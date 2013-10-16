@@ -1,0 +1,31 @@
+extends layout
+
+block content
+
+	//- if user.email
+	//- 	p yes &nbsp; #{user.email}
+	//- else
+	//- 	p no
+
+	.row
+		.col-sm-12
+			.page-header
+				h1 Profile
+				
+	.row
+		.col-sm-12
+			p 
+				strong Username: 
+				| #{user.username}
+			p 
+				strong Name: 
+				| #{user.firstName} #{user.lastName}
+			p 
+				strong Position: 
+				| #{user.position}
+			p 
+				strong Email: 
+				| #{user.email}
+			p 
+				strong Extenstion: 
+				| #{user.extension}
