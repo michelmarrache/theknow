@@ -1,12 +1,6 @@
 extends layout
 
 block content
-
-	//- if user.email
-	//- 	p yes &nbsp; #{user.email}
-	//- else
-	//- 	p no
-
 	.row
 		.col-sm-12
 			.page-header
@@ -15,9 +9,6 @@ block content
 	.row
 		.col-sm-12
 			p 
-				strong Username: 
-				| #{user.username}
-			p 
 				strong Name: 
 				| #{user.firstName} #{user.lastName}
 			p 
@@ -25,7 +16,7 @@ block content
 				| #{user.position}
 			p 
 				strong Email: 
-				| #{user.email}
+				| #{user.email}@kabookaboo.com
 			p 
 				strong Extenstion: 
 				| #{user.extension}
