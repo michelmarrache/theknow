@@ -6,13 +6,17 @@ block content
 		.col-sm-12
 			.page-header
 				h1 Account Information
-				h2 #{user.email}
+				//h2 #{user.email}
 
 	.row
 		.col-sm-12
 			form#formAddUser(name="adduser", method="post", action="/updateuser", role="form")
-				input(type="hidden", value="#{user.email}", name="email")
+				input#emailID(type="hidden", name="emailID", value="#{user.email}")
 
+				.row
+					.col-sm-6
+						.form-group
+							input#inputUsername(type="text", value="#{user.email}", placeholder="Username", name="username", class="form-control")
 				//
 					.row
 						.col-sm-6
@@ -21,7 +25,6 @@ block content
 						.col-sm-6
 							.form-group
 								input#inputConfirmPassword(type="password", placeholder="Confirm Password", name="confirmpassword", class="form-control")
-					
 					.row
 						.col-sm-12
 							h2 Personal Information
