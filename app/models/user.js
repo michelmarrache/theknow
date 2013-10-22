@@ -2,25 +2,25 @@ var mongoose = require('mongoose');
 var hash = require('../util/hash');
 
 UserSchema = mongoose.Schema({
-	firstName:  	String,
-	lastName:   	String,
+	firstName:  		String,
+	lastName:   		String,
 	//username:   	String,
-	email:      	String,
-	password:     String,
+	email:      		String,
+	password:     	String,
 	department:     String,
-	position:     String,
-	extension:    String,
-	salt:       	String,
-	hash:       	String,
+	position:     	String,
+	extension:    	String,
+	salt:       		String,
+	hash:       		String,
 	facebook:{
-		id:       	String,
-		email:    	String,
-		name:     	String
+		id:       		String,
+		email:    		String,
+		name:     		String
 	},
 	twitter:{
-		id:       	String,
-		email:    	String,
-		name:     	String
+		id:       		String,
+		email:    		String,
+		name:     		String
 	}
 }, { safe: true });
 

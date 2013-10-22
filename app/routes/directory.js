@@ -3,14 +3,14 @@ var Auth = require('../../config/middlewares/authorization.js');
 
 module.exports = function(app, passport){
   app.get('/directory', Auth.isAuthenticated , function(req, res){
-    User.find({},{}, function (err, users) {
+    /*User.find({},{}, function (err, users) {
       var userMap = {};
       users.forEach(function(user) {
         userMap[user.email] = user;
       })
       console.log(userMap);
-    res.render('directory', { userMap : userMap });
-    })
+    })*/
+    res.render('directory', { user : req.user });
   });
 
   app.get('/edituser/:email', Auth.isAuthenticated , function(req, res){
